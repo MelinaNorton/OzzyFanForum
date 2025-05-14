@@ -1,0 +1,246 @@
+table {
+  /* soften the edges & lift off the page */
+  width: 800px;
+  margin: 1.5rem auto;
+  display: table;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* allow scrollbars in children */
+  overflow: visible;
+  background-color: #fff;
+  table-layout: auto;
+}
+/* make only the post-text container scroll */
+.post-text-scroll {
+  max-height: 6em;       /* limit to ~3 lines */
+  overflow-y: auto;      /* scroll when it overflows */
+  overflow-x: hidden;
+  padding-right: 0.5em;  /* give room for scrollbar */
+  line-height: 1.4;      /* adjust to taste */
+  word-wrap: break-word; /* wrap long words */
+}
+
+/* make the post text paragraph scroll if it gets too tall */
+td > p {
+  display: block;   
+  overflow-y: auto;    /* vertical scrollbar when needed */
+  overflow-x: hidden;
+  margin: 0;           /* remove extra spacing */
+}
+
+/* optionally, style the scrollbar for a cleaner look */
+td > p::-webkit-scrollbar {
+  width: 6px;
+}
+td > p::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* Header cells */
+th {
+  background-color: rgba(142, 142, 147, 0.1); /* light translucent gray */
+  color: #444;                 /* darkish text */
+  font-weight: 600;            /* slightly heavier than body text */
+  text-transform: uppercase;    /* small-caps feel */
+  letter-spacing: 0.05em;
+  padding: 12px 16px;           /* a bit more breathing room */
+  border-bottom: 1px solid #eee;/* lighter bottom border */
+}
+
+/* Body cells */
+td {
+  color: #333;                  /* regular text color */
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Vertical dividers */
+th:not(:last-child),
+td:not(:last-child) {
+  border-right: 1px solid #f0f0f0;
+}
+
+/* Alternating row stripes */
+tbody tr:nth-child(even) {
+  background-color: rgba(142, 142, 147, 0.03);
+}
+
+/* Row hover highlight */
+tbody tr:hover {
+  background-color: rgba(142, 142, 147, 0.08);
+  transition: background-color 0.15s ease;
+}
+
+/* Smooth font rendering (especially on macOS/iOS) */
+table, th, td {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: subtle transition on cell hover */
+td:hover {
+  background-color: rgba(142, 142, 147, 0.05);
+  transition: background-color 0.15s ease;
+}
+
+  
+  .num_posts_col { text-align: center; }
+  
+  #ozzymedia {
+    width: 60%;
+    height: 200px;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: none;
+  }
+  
+  body {
+    background-color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    text-align: center;
+  }
+ 
+.localnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: lavender;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  .localnav > * {
+    margin: 0;                       
+  }
+.localnav .logo {
+    margin-right: auto;
+    height: 50px;
+    width: 70px;
+  }
+
+.localnav > *:not(#logout) {
+    margin-right: 1rem;
+  }
+  
+  #logout {
+    margin-left: auto;
+  }
+#Login,
+#Signup {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 90%;
+  padding: 0.75rem;
+  background: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+#Login {
+  top: 150px;
+}
+
+#Signup {
+  top: calc(150px + 250px + 1rem);
+}
+
+#Login input,
+#Login button,
+#Signup input,
+#Signup button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+  font-size: inherit;
+}
+#Login h2,
+#Login .logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  height: 50px;
+  width: 50px;
+}
+
+#Login .logo {
+  margin-left: 0.5rem; 
+  margin-right: 0;      
+}
+#seefeatures,
+#seeabout {
+  display: block;         
+  margin: 0.5rem auto auto 0;  
+}
+.album {
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .album:hover {
+    background-color: #f3e8ff;        
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  #ozzymedia {
+    width: 60%;
+    height: 200px;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+/* Make #description a normal block container */
+#description {
+  display: block;          
+  max-width: 700px;        /* keeps lines from stretching too wide */
+  margin: 2rem auto;       /* center and vertical spacing */
+  padding: 1.5rem;         
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Float the image to the right, text will wrap around */
+#description img {
+  float: right;
+  width: auto;
+  max-width: 40%;          /* image never overwhelms the text */
+  margin: 0 0 1rem 1rem;   /* spacing between image and text */
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Paragraph styling for “page‐like” feel */
+#description p {
+  margin-bottom: 1rem;
+  line-height: 1.6;        
+  text-align: justify;     /* even edges on both sides */
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Clear the float at the end so subsequent elements aren’t wrapped */
+#description::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+  
+  
+  
+

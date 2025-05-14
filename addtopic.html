@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Topic</title>
+  <link rel="stylesheet" href="simple.css">
+  <link rel="stylesheet" href="NavBar.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="ozzyAjaxRequest.js"></script>
+  <!-- TinyMCE (Community) -->
+  <script src="https://cdn.tiny.cloud/1/0aum8n9gxhiod2t3pj2dz5ttqtd1kou2qvtt382fdq3blg15/tinymce/6/tinymce.min.js" 
+          referrerpolicy="origin"></script>
+</head>
+<body>
+  <h1>Add a Topic</h1>
+  <form id="mediaSearchForm" class="search-form">
+    <input
+      type="text"
+      id="addmedia"           
+      name="addmedia"
+      placeholder="Search for Ozzy Albums"
+      size="30"
+    >
+    <button type="submit">Search</button>
+  </form>
+  <div id="ozzymedia"></div>
+  <form method="post" action="do_addtopic.php">
+    <p>
+      <label for="topic_title">Topic Title:</label><br>
+      <input type="text" id="topic_title" name="topic_title" size="40" maxlength="150" required>
+    </p>
+
+    <p>
+      <label for="post_text">Post Text:</label><br>
+      <textarea id="post_text" name="post_text" rows="10" cols="60"></textarea>
+    </p>
+
+    <fieldset>
+      <legend>Select relevant tags:</legend>
+      <label><input type="checkbox" name="tags[]" value="opinion"> Opinion</label>
+      <label><input type="checkbox" name="tags[]" value="media"> Media</label>
+      <label><input type="checkbox" name="tags[]" value="rankings"> Rankings</label>
+      <label><input type="checkbox" name="tags[]" value="discussion"> Discussion</label>
+    </fieldset>
+
+    <p>
+      <label for="media_link">Media</label><br>
+      <input
+        type="url"
+        id="media_link"
+        name="media_link"
+        size="60"
+        placeholder="https://example.com/song.mp3"
+      >
+    </p>
+    <button type="submit">Add Topic</button>
+  </form>
+
+  <script>
+    // Initialize TinyMCE after the <textarea> is in the DOM
+    tinymce.init({
+      selector: '#post_text',
+      height: 300,
+      menubar: false,
+      plugins: 'link image code',
+      toolbar: 'undo redo | bold italic | alignleft aligncenter | code'
+    });
+
+    // wire up the form to your function
+    $('#mediaSearchForm').on('submit', function(e) {
+      e.preventDefault();   
+      mediaSearch();        
+    });
+
+    $('#ozzymedia').on('click', '.album', function() {
+      const url = $(this).find('a').attr('href');
+      if (!url) return;
+      $('#media_link').val(url);
+      $('#media_link').attr('placeholder', url);
+    });
+
+  </script>
+</body>
+</html>

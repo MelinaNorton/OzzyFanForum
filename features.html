@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Features</title>
+    <link rel="stylesheet" href="simple.css">
+  </head>
+  <body>
+    <button class="returntolanding">Home</button>
+    <h3><strong>Delivered Features</strong></h3>
+    <p><strong>Frontend: HTML, CSS, JS</strong></p>
+    <ul>
+        <li>
+            <p>Improved User Interface (Better Workflow & Identity) (WORKING)</p>
+        </li>
+        <li>
+            <p>Added New Forms/Pages (WORKING)</p>
+        </li>
+        <li>
+            <p>Integrated a Rich Text-Editor (WORKING)</p>
+        </li>
+        <li>
+            <p>Improved User Interface (Better Workflow & Identity) (WORKING)</p>
+        </li>
+        <li>
+            <p>Enabled Deletion of Topics (WORKING)</p>
+        </li>
+        <li>
+            <p>Enabled Searching (Searchbar) (WORKING)</p>
+        </li>
+        <li>
+            <p>Added Tags (WORKING)</p>
+        </li>
+        <li>
+            <p>Responsive Design (Scrolling) (WORKING)</p>
+        </li>
+        <li>
+            <p>API Integration with RapidAPI Spotify/AJAX calls (WORKING)</p>
+        </li>
+        <li>
+            <p>Dynamic Topic Loading (WORKING)</p>
+        </li>
+    </ul>
+    <p><strong>Backend: PHP, SQL, Auth</strong></p>
+    <ul>
+        <li>
+            <p>Added Admin dashboard/special permissions (in database) (WORKING)</p>
+        </li>
+        <li>
+            <p>Dynamically loading Topics, Tags & Posts (WORKING)</p>
+        </li>
+        <li>
+            <p>Handling Form submissions/sanitization (WORKING)</p>
+        </li>
+        <li>
+            <p>Added Additional Tables for Further Funtionality (Tags, TopicTags & media) (WORKING)</p>
+        </li>
+        <li>
+            <p>Added functional authentication/ dynamic permissions (can only delete your own posts) + logout function (WORKING)</p>
+        </li>
+        <li>
+            <p>Added functionalaccount-creation on login page (WORKING)</p>
+        </li>
+        <li>
+            <p>Search Functionality associated with User, Tags or Topic name (WORKING)</p>
+        </li>
+        <li>
+            <p>Partial Search Functionality with Album Names (WORKING)s</p>
+        </li>
+    </ul>
+    <br/>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const goHome = document.getElementsByClassName("returntolanding");
+            Array.from(goHome).forEach((btn) => {
+                btn.addEventListener('click', () => {
+                window.location.href = "landing.php";
+                });
+            });
+        })
+    </script>
+  </body>
+</html>

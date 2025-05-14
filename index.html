@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Melina's 3750 WebPage</title>
+    <link rel="stylesheet" href="simple.css">
+    <link rel="stylesheet" href="NavBar.css">
+  </head>
+  <body>
+    <h1 >My name is Melina Norton</h1>
+    <h2>This is my web site for CPSC 3750 Spring 2025</h2>
+    <div id="navbar">
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          fetch('../navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        });
+    </script>
+    </div>
+    <br/>
+    <img src="portofol_img_melina.jpg"width="400" height="550"/>
+  </body>
+</html>

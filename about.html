@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3750 Final Project About</title>
+    <link rel="stylesheet" href="simple.css">
+    <link rel="stylesheet" href="NavBar.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          fetch('../navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        });
+    </script>
+    </div>
+    <p>Team Members: Melina Norton</p>
+    <p>Responsibilities (all): Melina Norton</p>
+  </body>
+</html>
