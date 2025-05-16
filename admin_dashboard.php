@@ -49,7 +49,7 @@ END_OF_TEXT;
 foreach ($flaggedPosts as $row) {
     $post_id          = htmlspecialchars($row['post_id']);
     $topic_id         = htmlspecialchars($row['topic_id']);
-    $post_text        = nl2br(htmlspecialchars($row['post_text']));
+    $post_text        = $row['post_text'];
     $post_create_time = htmlspecialchars($row['post_create_time']);
     $post_owner       = htmlspecialchars($row['post_owner']);
 
