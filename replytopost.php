@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db_include.php';
 doDB();
 
@@ -87,17 +88,21 @@ if (!$_POST) {
           exit;
       }
 
-      //create safe values for use
-      $safe_topic_id = mysqli_real_escape_string($mysqli, $_POST['topic_id']);
-      $safe_post_text = mysqli_real_escape_string($mysqli, $_POST['post_text']);
+      $stmt = $mysqli->prepare(
+  "INSERT INTO forum_posts
+     (topic_id, post_text, post_create_time, post_owner)
+   VALUES
+     (?, ?, NOW(), ?)"
+);
 
-      //add the post
-      $add_post_sql = "INSERT INTO forum_posts (topic_id,post_text,
-                       post_create_time,post_owner) VALUES
-                       ('".$safe_topic_id."', '".$safe_post_text."',
-                       now(),'".$safe_post_owner."')";
-      $add_post_res = mysqli_query($mysqli, $add_post_sql)
-                      or die(mysqli_error($mysqli));
+$stmt->bind_param(
+  "iss",
+  $_POST['topic_id'],
+  $_POST['post_text'],
+  $_SESSION['curr_username']
+);
+
+$stmt->execute();
 
       //close connection to MySQL
       mysqli_close($mysqli);
