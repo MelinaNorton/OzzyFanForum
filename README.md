@@ -35,7 +35,7 @@ Topics & Posts:
   - Delete your own posts at any time
     
 Media Embedding:
-  - Paste a Spotify URL when creating/editing topics to display a play icon that opens the track in a new tab
+  - Displays all albums linked to Ozzy Osbourne in the Spotify AP; allows selection with a click when creating/editing topics, which displays a play icon that opens the track in a new tab
 
 Reporting & Moderation:
   - Report posts via a button
