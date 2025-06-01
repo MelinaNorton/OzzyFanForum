@@ -160,7 +160,7 @@ END_OF_TEXT;
     <input type="text" name="searchtopics" placeholder="Search by creator, topic name or tags" required size="30">
     <button type="submit">Search</button>
   </form>
-  <?php echo $display_block; ?>
   <p>Would you like to <a href="addtopic.html">add a topic</a>?</p>
+  <?php echo $display_block; ?>
 </body>
 </html>
