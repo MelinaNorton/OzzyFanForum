@@ -1,45 +1,74 @@
 # Ozzy Fan Forum
 
-A community-driven discussion board for Ozzy Osbourne fans, built with PHP, JavaScript (jQuery & AJAX) and the Spotify Web API. Users can create and browse topics, post replies, attach media links, and report inappropriate content. Admins have a dedicated console for reviewing flagged posts.
+A community-driven discussion board for Ozzy Osbourne fans. Users can sign up, log in, create topics, post replies, and engage with media-rich content. Administrators can moderate and review flagged posts.
+
+**Live Demo:** [Login Page](https://www.portofolkodimi.com/ozzylogin.php)
 
 ---
-## Tech Stack & Tools
-
-- **Backend:** PHP 7.x+, MySQL  
-- **Frontend:** HTML5, CSS3, JavaScript, jQuery, AJAX  
-- **API:** Spotify Web API (embed track links)  
-- **Web server:** Apache / Nginx  
-- **Dependencies / Dev Tools:**  
-  - [Composer](https://getcomposer.org/) (PHP library management)  
-  - [phpMyAdmin](https://www.phpmyadmin.net/) (DB administration)  
-  - Git (version control)  
-
----
-
-##  Installation
-
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/your-org/ozzy-fan-forum.git
-   cd ozzy-fan-forum
 
 ## Features
-User Authentication:
-  - Sign up / log in with secure password hashing
-  - Role-based access (regular user vs. admin)
 
-Topics & Posts:
-  - Create topics with title, tags, and optional Spotify links
-  - View topic list (all topics or “My Topics” for your own)
-  - Post replies under any topic
-  - Delete your own posts at any time
-    
-Media Embedding:
-  - Displays all albums linked to Ozzy Osbourne in the Spotify AP; allows selection with a click when creating/editing topics, which displays a play icon that opens the track in a new tab
+* **User Authentication:** Secure sign-up, log-in, and log-out flows.
+* **Topics & Posts:**
 
-Reporting & Moderation:
-  - Report posts via a button
+  * Create and browse discussion topics with tags and optional Spotify embeds.
+  * Reply to topics, edit or delete your own posts.
+* **Media Embedding:** Embed Spotify track links directly in posts.
+* **Search & Reporting:** Search topics by keyword and report inappropriate content.
+* **Admin Dashboard:** Review, approve, or remove flagged posts.
 
-Admin console lists all flagged posts for review
+---
 
+## Tech Stack
+
+* **Backend:** PHP 7.x+, MySQL
+* **Frontend:** HTML5, CSS3, JavaScript, jQuery, AJAX
+* **API Integration:** Spotify Web API
+* **Server:** Apache or Nginx
+
+---
+
+## Usage
+
+Simply navigate to the hosted application:
+
+```
+https://www.portofolkodimi.com/ozzylogin.php
+```
+
+From there, you can create an account or log in directly—no local setup required.
+
+---
+
+## Project Structure
+
+```
+OzzyFanForum/
+├── about.html
+├── addtopic.html
+├── admin_dashboard.php
+├── db_include.php
+├── index.html
+├── ozzylogin.php
+├── processlogin.php
+├── signup.php
+├── topiclist.php
+├── showtopic.php
+├── replytopost.php
+├── report.php
+├── deletemypost.php
+├── deleteflaggedpost.php
+├── resources/         # Static assets (CSS, images)
+│   ├── simple.css
+│   └── ozzylogo.png
+└── ...                # Additional PHP/HTML files
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for bug fixes, new features, or improvements.
+
+---
 
